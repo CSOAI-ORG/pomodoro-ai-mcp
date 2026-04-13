@@ -4,15 +4,26 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pomodoro-ai-mcp"
-version = "0.1.0"
-description = "Manage Pomodoro focus sessions with configurable work and break intervals and session counters."
+version = "1.0.0"
+description = "MEOK AI Labs — Pomodoro tools for AI agents and LLMs"
+authors = [{name="MEOK AI Labs", email="nicholas@meok.ai"}]
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
+keywords = ["mcp", "mcp-server", "model-context-protocol", "claude", "ai-tools", "meok-ai-labs", "pomodoro", "time-management", "productivity", "focus-technique", "work-intervals"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Intended Audience :: Developers",
+]
 dependencies = [
     "mcp>=1.0.0",
-    "pydantic>=2.0",
 ]
 
-[project.scripts]
-pomodoro_ai_mcp = "pomodoro_ai_mcp.server:main"
+[project.urls]
+Homepage = "https://meok.ai"
+Repository = "https://github.com/CSOAI-ORG/pomodoro-ai-mcp"
+Documentation = "https://meok.ai/docs/pomodoro-ai-mcp"
+"Bug Tracker" = "https://github.com/CSOAI-ORG/pomodoro-ai-mcp/issues"
