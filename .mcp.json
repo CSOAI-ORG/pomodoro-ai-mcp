@@ -1,21 +1,6 @@
 {
   "name": "pomodoro-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Pomodoro tools for AI agents and LLMs",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/pomodoro-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
-  "tools": [
-    "start_pomodoro",
-    "get_stats"
-  ],
-  "categories": [
-    "Productivity",
-    "Time Management"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+  "description": "Manage Pomodoro focus sessions with configurable work and break intervals and session counters.",
+  "version": "1.0.0",
+  "tools": []
 }
