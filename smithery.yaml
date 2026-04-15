@@ -1,6 +1,6 @@
 name: pomodoro-ai-mcp
-description: Manage Pomodoro focus sessions, breaks, and productivity analytics. By
-  MEOK AI Labs.
+description: 'Pomodoro Ai MCP server. Tools: start session, stop session, get stats.
+  Built by MEOK AI Labs.'
 version: 1.0.0
 tools:
 - name: start_session
