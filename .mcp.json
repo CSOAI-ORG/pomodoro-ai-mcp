@@ -1,20 +1,78 @@
 {
   "name": "pomodoro-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 MEOK AI Labs MCP Server",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Manage Pomodoro focus sessions, breaks, and productivity analytics. By MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
-      "name": "start_pomodoro",
-      "description": "Start a Pomodoro session",
+      "name": "start_session",
+      "description": "Start a new Pomodoro focus session. Optionally specify a task name and custom duration (default uses configured timer).",
       "parameters": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "task": {
+            "type": "string"
+          },
+          "duration_minutes": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "stop_session",
+      "description": "Stop the current Pomodoro session. Mark as completed or interrupted. Add optional notes.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "completed": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
         "required": []
       }
     },
     {
       "name": "get_stats",
-      "description": "Get Pomodoro stats",
+      "description": "Get Pomodoro productivity statistics for the last N days (default 7).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "days": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "configure_timer",
+      "description": "Configure Pomodoro timer durations. Customise work, short break, long break, and session count before long break.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "work_minutes": {
+            "type": "integer"
+          },
+          "short_break": {
+            "type": "integer"
+          },
+          "long_break": {
+            "type": "integer"
+          },
+          "sessions_before_long": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "get_productivity_report",
+      "description": "Generate a detailed productivity report with insights and recommendations.",
       "parameters": {
         "type": "object",
         "properties": {},

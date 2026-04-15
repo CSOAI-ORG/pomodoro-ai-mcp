@@ -1,10 +1,50 @@
 name: pomodoro-ai-mcp
-description: MEOK AI Labs MCP Server
+description: Manage Pomodoro focus sessions, breaks, and productivity analytics. By
+  MEOK AI Labs.
 version: 1.0.0
 tools:
-- name: start_pomodoro
-  description: Start a Pomodoro session
-  parameters: []
+- name: start_session
+  description: Start a new Pomodoro focus session. Optionally specify a task name
+    and custom duration (default uses configured timer).
+  parameters:
+  - name: task
+    type: string
+    required: false
+  - name: duration_minutes
+    type: integer
+    required: false
+- name: stop_session
+  description: Stop the current Pomodoro session. Mark as completed or interrupted.
+    Add optional notes.
+  parameters:
+  - name: completed
+    type: boolean
+    required: false
+  - name: notes
+    type: string
+    required: false
 - name: get_stats
-  description: Get Pomodoro stats
+  description: Get Pomodoro productivity statistics for the last N days (default 7).
+  parameters:
+  - name: days
+    type: integer
+    required: false
+- name: configure_timer
+  description: Configure Pomodoro timer durations. Customise work, short break, long
+    break, and session count before long break.
+  parameters:
+  - name: work_minutes
+    type: integer
+    required: false
+  - name: short_break
+    type: integer
+    required: false
+  - name: long_break
+    type: integer
+    required: false
+  - name: sessions_before_long
+    type: integer
+    required: false
+- name: get_productivity_report
+  description: Generate a detailed productivity report with insights and recommendations.
   parameters: []
