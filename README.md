@@ -1,70 +1,38 @@
-# Pomodoro Ai
+<div align="center">
 
-> By [MEOK AI Labs](https://meok.ai) — Manage Pomodoro focus sessions, breaks, and productivity analytics. By MEOK AI Labs.
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/pomodoro-ai-mcp)](https://github.com/CSOAI-ORG/pomodoro-ai-mcp/stargazers)
 
-Pomodoro AI — manage focus sessions, breaks, and productivity analytics. MEOK AI Labs.
+# upomodoroU aiU mcp
+
+**Pomodoro AI — manage focus sessions, breaks, and productivity analytics. MEOK AI Labs.**
+
+[![npm version](https://img.shields.io/npm/v/@meok-ai/pomodoro-ai-mcp)](https://www.npmjs.com/package/@meok-ai/pomodoro-ai-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
+
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/pomodoro-ai-mcp/issues)
+
+</div>
+
+---
 
 ## Installation
 
 ```bash
 pip install pomodoro-ai-mcp
+# or
+npm install -g @meok-ai/pomodoro-ai-mcp
 ```
 
-## Usage
+## Quick Start
 
-```bash
-# Run standalone
-python server.py
+See the project repository for full documentation and examples.
 
-# Or via MCP
-mcp install pomodoro-ai-mcp
-```
+## Enterprise Support
 
-## Tools
-
-### `start_session`
-Start a new Pomodoro focus session. Optionally specify a task name and custom duration (default uses configured timer).
-
-**Parameters:**
-- `task` (str)
-- `duration_minutes` (int)
-
-### `stop_session`
-Stop the current Pomodoro session. Mark as completed or interrupted. Add optional notes.
-
-**Parameters:**
-- `completed` (bool)
-- `notes` (str)
-
-### `get_stats`
-Get Pomodoro productivity statistics for the last N days (default 7).
-
-**Parameters:**
-- `days` (int)
-
-### `configure_timer`
-Configure Pomodoro timer durations. Customise work, short break, long break, and session count before long break.
-
-**Parameters:**
-- `work_minutes` (int)
-- `short_break` (int)
-- `long_break` (int)
-- `sessions_before_long` (int)
-
-### `get_productivity_report`
-Generate a detailed productivity report with insights and recommendations.
-
-
-## Authentication
-
-Free tier: 15 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
-
-## Links
-
-- **Website**: [meok.ai](https://meok.ai)
-- **GitHub**: [CSOAI-ORG/pomodoro-ai-mcp](https://github.com/CSOAI-ORG/pomodoro-ai-mcp)
-- **PyPI**: [pypi.org/project/pomodoro-ai-mcp](https://pypi.org/project/pomodoro-ai-mcp/)
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
 ## License
 
-MIT — MEOK AI Labs
+MIT © [CSOAI](https://csoai.org)
