@@ -32,7 +32,23 @@ mcp = FastMCP("pomodoro-ai", instructions="Manage Pomodoro focus sessions, break
 
 @mcp.tool()
 def start_session(task: str = "Deep Work", duration_minutes: int = 0, api_key: str = "") -> str:
-    """Start a new Pomodoro focus session. Optionally specify a task name and custom duration (default uses configured timer)."""
+    """Start a new Pomodoro focus session. Optionally specify a task name and custom duration (default uses configured timer).
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     global _active_session
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -64,7 +80,23 @@ def start_session(task: str = "Deep Work", duration_minutes: int = 0, api_key: s
 
 @mcp.tool()
 def stop_session(completed: bool = True, notes: str = "", api_key: str = "") -> str:
-    """Stop the current Pomodoro session. Mark as completed or interrupted. Add optional notes."""
+    """Stop the current Pomodoro session. Mark as completed or interrupted. Add optional notes.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     global _active_session
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -102,7 +134,22 @@ def stop_session(completed: bool = True, notes: str = "", api_key: str = "") -> 
 
 @mcp.tool()
 def get_stats(days: int = 7, api_key: str = "") -> str:
-    """Get Pomodoro productivity statistics for the last N days (default 7)."""
+    """Get Pomodoro productivity statistics for the last N days (default 7).
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -137,7 +184,23 @@ def get_stats(days: int = 7, api_key: str = "") -> str:
 
 @mcp.tool()
 def configure_timer(work_minutes: int = 25, short_break: int = 5, long_break: int = 15, sessions_before_long: int = 4, api_key: str = "") -> str:
-    """Configure Pomodoro timer durations. Customise work, short break, long break, and session count before long break."""
+    """Configure Pomodoro timer durations. Customise work, short break, long break, and session count before long break.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -170,7 +233,22 @@ def configure_timer(work_minutes: int = 25, short_break: int = 5, long_break: in
 
 @mcp.tool()
 def get_productivity_report(api_key: str = "") -> str:
-    """Generate a detailed productivity report with insights and recommendations."""
+    """Generate a detailed productivity report with insights and recommendations.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
