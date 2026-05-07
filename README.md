@@ -1,3 +1,7 @@
+[![pomodoro-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/pomodoro-ai-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/pomodoro-ai-mcp)
+[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
+[![PyPI](https://img.shields.io/pypi/v/pomodoro-ai-mcp)](https://pypi.org/project/pomodoro-ai-mcp/)
+
 [![pomodoro-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/pomodoro-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/pomodoro-ai-mcp)
 
 <div align="center">
