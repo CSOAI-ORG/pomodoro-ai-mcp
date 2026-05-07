@@ -48,6 +48,12 @@ def start_session(task: str = "Deep Work", duration_minutes: int = 0, api_key: s
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        task (str): The task to analyze or process.
+        duration_minutes (int): The duration minutes to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -110,6 +116,12 @@ def stop_session(completed: bool = True, notes: str = "", api_key: str = "") -> 
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        completed (bool): The completed to analyze or process.
+        notes (str): The notes to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -177,6 +189,11 @@ def get_stats(days: int = 7, api_key: str = "") -> str:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        days (int): The days to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -242,6 +259,14 @@ def configure_timer(work_minutes: int = 25, short_break: int = 5, long_break: in
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        work_minutes (int): The work minutes to analyze or process.
+        short_break (int): The short break to analyze or process.
+        long_break (int): The long break to analyze or process.
+        sessions_before_long (int): The sessions before long to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -304,6 +329,10 @@ def get_productivity_report(api_key: str = "") -> str:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
