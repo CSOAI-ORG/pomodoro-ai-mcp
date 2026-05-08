@@ -1,45 +1,59 @@
-[![pomodoro-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/pomodoro-ai-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/pomodoro-ai-mcp)
-[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
-[![PyPI](https://img.shields.io/pypi/v/pomodoro-ai-mcp)](https://pypi.org/project/pomodoro-ai-mcp/)
-
-[![pomodoro-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/pomodoro-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/pomodoro-ai-mcp)
-
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/pomodoro-ai-mcp)](https://github.com/CSOAI-ORG/pomodoro-ai-mcp/stargazers)
+# Pomodoro Ai MCP
 
-# upomodoroU aiU mcp
+**MCP server for pomodoro ai mcp operations**
 
-**Pomodoro AI — manage focus sessions, breaks, and productivity analytics. MEOK AI Labs.**
-
-[![npm version](https://img.shields.io/npm/v/@meok-ai/pomodoro-ai-mcp)](https://www.npmjs.com/package/@meok-ai/pomodoro-ai-mcp)
+[![PyPI](https://img.shields.io/pypi/v/meok-pomodoro-ai-mcp)](https://pypi.org/project/meok-pomodoro-ai-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
-
-[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/pomodoro-ai-mcp/issues)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-MCP_Server-purple)](https://meok.ai)
 
 </div>
 
----
+## Overview
+
+Pomodoro Ai MCP provides AI-powered tools via the Model Context Protocol (MCP).
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `start_session` | Start a new Pomodoro focus session. Optionally specify a task name and custom du |
+| `stop_session` | Stop the current Pomodoro session. Mark as completed or interrupted. Add optiona |
+| `get_stats` | Get Pomodoro productivity statistics for the last N days (default 7). |
+| `configure_timer` | Configure Pomodoro timer durations. Customise work, short break, long break, and |
+| `get_productivity_report` | Generate a detailed productivity report with insights and recommendations. |
 
 ## Installation
 
 ```bash
-pip install pomodoro-ai-mcp
-# or
-npm install -g @meok-ai/pomodoro-ai-mcp
+pip install meok-pomodoro-ai-mcp
 ```
 
-## Quick Start
+## Usage with Claude Desktop
 
-See the project repository for full documentation and examples.
+Add to your Claude Desktop MCP config (`claude_desktop_config.json`):
 
-## Enterprise Support
+```json
+{
+  "mcpServers": {
+    "pomodoro-ai": {
+      "command": "python",
+      "args": ["-m", "meok_pomodoro_ai_mcp.server"]
+    }
+  }
+}
+```
 
-- 📧 nicholas@csoai.org
-- 🌐 [CSOAI.org](https://csoai.org)
+## Usage with FastMCP
+
+```python
+from mcp.server.fastmcp import FastMCP
+
+# This server exposes 5 tool(s) via MCP
+# See server.py for full implementation
+```
 
 ## License
 
-MIT © [CSOAI](https://csoai.org)
-<!-- mcp-name: io.github.CSOAI-ORG/pomodoro-ai-mcp -->
+MIT © [MEOK AI Labs](https://meok.ai)
