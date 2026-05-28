@@ -1,13 +1,21 @@
 #!/usr/bin/env python3
 """Pomodoro AI — manage focus sessions, breaks, and productivity analytics. MEOK AI Labs."""
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import json
 from datetime import datetime, timezone
 from collections import defaultdict
 from mcp.server.fastmcp import FastMCP
+
+STRIPE_199 = "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K"
+
+def _add_upgrade_tail(response, tier="free"):
+    """Append upgrade nudge to free-tier success responses."""
+    if isinstance(response, dict) and tier == "free":
+        response["_upgrade_note"] = "Pro tier: unlimited calls + priority support. Upgrade: " + STRIPE_199
+    return response
+
 
 FREE_DAILY_LIMIT = 15
 _usage = defaultdict(list)
@@ -72,7 +80,7 @@ def start_session(task: str = "Deep Work", duration_minutes: int = 0, api_key: s
     global _active_session
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": STRIPE_199})
     if err := _rl(): return err
     if _active_session:
         return json.dumps({"error": "A session is already active. Stop it first.", "active_session": _active_session})
@@ -140,7 +148,7 @@ def stop_session(completed: bool = True, notes: str = "", api_key: str = "") -> 
     global _active_session
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": STRIPE_199})
     if err := _rl(): return err
     if not _active_session:
         return json.dumps({"error": "No active session to stop."})
@@ -211,7 +219,7 @@ def get_stats(days: int = 7, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": STRIPE_199})
     if err := _rl(): return err
     if not _sessions:
         return json.dumps({"message": "No sessions recorded yet. Start your first Pomodoro!", "total_sessions": 0})
@@ -284,7 +292,7 @@ def configure_timer(work_minutes: int = 25, short_break: int = 5, long_break: in
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": STRIPE_199})
     if err := _rl(): return err
     work_minutes = max(5, min(work_minutes, 120))
     short_break = max(1, min(short_break, 30))
@@ -350,7 +358,7 @@ def get_productivity_report(api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": STRIPE_199})
     if err := _rl(): return err
     if not _sessions:
         return json.dumps({"message": "No data yet. Complete some Pomodoro sessions first!", "recommendations": ["Start with the default 25-minute timer", "Begin with 2-3 sessions per day"]})
@@ -394,5 +402,8 @@ def get_productivity_report(api_key: str = "") -> str:
     }, indent=2)
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()
