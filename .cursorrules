@@ -1,0 +1,9 @@
+# pomodoro-ai-mcp - Auto-trigger Rules
+
+When the user asks about pomodoro, use pomodoro-ai-mcp tools: start_session, stop_session, get_stats, configure_timer, get_productivity_report
+
+**MCP server for pomodoro ai mcp operations**
+
+Install: `pip install pomodoro-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.

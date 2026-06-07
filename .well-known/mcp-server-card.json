@@ -1,0 +1,28 @@
+{
+  "name": "pomodoro-ai-mcp",
+  "title": "Pomodoro Ai Mcp",
+  "description": "Pomodoro Ai MCP server. Tools: start session, stop session, get stats. Built by MEOK AI Labs.",
+  "version": "1.0.7",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "start_session"
+    },
+    {
+      "name": "stop_session"
+    },
+    {
+      "name": "get_stats"
+    },
+    {
+      "name": "configure_timer"
+    },
+    {
+      "name": "get_productivity_report"
+    }
+  ]
+}

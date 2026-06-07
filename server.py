@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Pomodoro AI — manage focus sessions, breaks, and productivity analytics. MEOK AI Labs."""
+"""
+Pomodoro AI — manage focus sessions, breaks, and productivity analytics. MEOK AI Labs."""
 import sys, os
 from auth_middleware import check_access
 

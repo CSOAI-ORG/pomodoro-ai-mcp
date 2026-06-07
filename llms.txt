@@ -1,0 +1,36 @@
+# pomodoro-ai-mcp
+# **MCP server for pomodoro ai mcp operations**
+
+## Install
+```bash
+pip install pomodoro-ai-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `start_session`
+Start a new Pomodoro focus session. Optionally specify a task name and custom duration (default uses configured timer).
+
+### `stop_session`
+Stop the current Pomodoro session. Mark as completed or interrupted. Add optional notes.
+
+### `get_stats`
+Get Pomodoro productivity statistics for the last N days (default 7).
+
+### `configure_timer`
+Configure Pomodoro timer durations. Customise work, short break, long break, and session count before long break.
+
+### `get_productivity_report`
+Generate a detailed productivity report with insights and recommendations.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.
