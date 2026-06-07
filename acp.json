@@ -1,0 +1,23 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "pomodoro-ai-mcp",
+    "description": "Pomodoro Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.7",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "pomodoro-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "start_session",
+      "stop_session",
+      "get_stats",
+      "configure_timer",
+      "get_productivity_report"
+    ]
+  }
+}

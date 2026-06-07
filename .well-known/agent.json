@@ -1,0 +1,68 @@
+{
+  "name": "pomodoro-ai-mcp",
+  "description": "Pomodoro Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/pomodoro-ai-mcp.html",
+  "version": "1.0.7",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "start_session",
+      "name": "Start Session",
+      "description": "start_session via pomodoro-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "stop_session",
+      "name": "Stop Session",
+      "description": "stop_session via pomodoro-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_stats",
+      "name": "Get Stats",
+      "description": "get_stats via pomodoro-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "configure_timer",
+      "name": "Configure Timer",
+      "description": "configure_timer via pomodoro-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_productivity_report",
+      "name": "Get Productivity Report",
+      "description": "get_productivity_report via pomodoro-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
